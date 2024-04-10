@@ -43,8 +43,12 @@ Common metadata schema to store and access microscopy data from simulations and 
     - The "Legend" contains a column with colors and a column with the legend of the colors. These colors are used in the file while developing it.
 
 * "Metadata_Experiment_Objects.xlsx" defines an example of a publication. It contains all the objects and relations between those needed for defining a publication. It contains a datasheet named "Experiment" where all the relations between the different objects are defined and several other datasheets where the objects are described.
+* "create_excel_relations_file_for_selected_object.py" convert information obtained from the ELN of a specified object (object metadata and object relations) into an Excel file that may be afterwards used to be converted into JSON-LD file format.
 * "convert_excel_to_jsonld.py" is used to convert information contained in the previous two Excel files into JSON-LD file format.
+* "convert_excel_to_jsonld_flat.py" is used to convert information contained in the previous two Excel files into JSON-LD file format (flat format).
 * "selected_object_schema.json" is an example of an JSON-LD file obtained from converting the information available in the Excel files. This JSON-LD can be explored in the [JSON-LD Playground](https://json-ld.org/playground/). One just needs to copy its content into the textbox displayed in the playground and click on the "Visualized" tab below it.
+* "create_openBIS_objects.py" is used for creating vocabularies, property types, and object types inside the ELN (openBIS in this use case).
+* "save_or_load_openbis_schema.py" is used to import/export ELN (openBIS) databases. This makes easier importing data from one machine to another.
 
 ## Achievement
 This repository contains all the files needed for creating the provenance of experiments and simulations in the context of microscopy.
