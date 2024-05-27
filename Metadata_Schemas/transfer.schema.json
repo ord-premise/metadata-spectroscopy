@@ -1,0 +1,46 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/transfer.schema.json",
+    "title": "Transfer",
+    "description": "A transfer in the inventory",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the transfer."
+        },
+        "description": {
+            "type": "string",
+            "description": "Description of the transfer."
+        },
+        "locationBefore": {
+            "type": "object",
+            "description": "Location of the sample before the transfer.",
+            "properties": {
+                "room": {
+                    "$ref": "./room.schema.json",
+                    "description": "Details about the room where the sample was located."
+                },
+                "institution": {
+                    "$ref": "./institution.schema.json",
+                    "description": "Details about the institution where the sample was located."
+                }
+            }
+        },
+        "locationAfter": {
+            "type": "object",
+            "description": "Location of the sample after the transfer.",
+            "properties": {
+                "room": {
+                    "$ref": "./room.schema.json",
+                    "description": "Details about the room where the sample is located."
+                },
+                "institution": {
+                    "$ref": "./institution.schema.json",
+                    "description": "Details about the institution where the sample is located."
+                }
+            }
+        },
+        "required": ["name", "locationBefore", "locationAfter"]
+    }
+}

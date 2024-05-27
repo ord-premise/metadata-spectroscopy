@@ -1,0 +1,116 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/atomisticmodel.schema.json",
+    "title": "Atomistic Model",
+    "description": "An atomistic model in the inventory",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the atomistic model."
+        },
+        "atomsPositions": {
+            "type": "array",
+            "description": "List of atomic symbols and cartesian coords in Angstorm.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "atomSymbol": {
+                        "type": "string",
+                        "description": "Atom symbol."
+                    },
+                    "x": {
+                        "type": "object",
+                        "description": "X-axis coordinate.",
+                        "properties": {
+                            "value": {
+                                "type": "number"
+                            },
+                            "unit": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "y": {
+                        "type": "object",
+                        "description": "Y-axis coordinate.",
+                        "properties": {
+                            "value": {
+                                "type": "number"
+                            },
+                            "unit": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "z": {
+                        "type": "object",
+                        "description": "Z-axis coordinate.",
+                        "properties": {
+                            "value": {
+                                "type": "number"
+                            },
+                            "unit": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments of the atomistic model."
+        },
+        "cellVectors": {
+            "type": "array",
+            "description": "Lattice vectors of the cell in Angstorm",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number"
+                    },
+                    "unit": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "periodicBoundaryConditions": {
+            "type": "object",
+            "description": "Periodic boundary conditions",
+            "properties": {
+                "x": {
+                    "type": "string",
+                    "description": "X-axis."
+                },
+                "y": {
+                    "type": "string",
+                    "description": "Y-axis."
+                },
+                "z": {
+                    "type": "string",
+                    "description": "Z-axis."
+                }
+            }
+        },
+        "optimised": {
+            "type": "boolean",
+            "description": "Whether the atomistic model is optimised."
+        },
+        "wfmsUUID": {
+            "type": "string",
+            "description": "Unique identifier of the simulation object in the WFMS."
+        },
+        "crystal": {
+            "$ref": "./crystal.schema.json",
+            "description": "Details about the crystal"
+        },
+        "molecule": {
+            "$ref": "./molecule.schema.json",
+            "description": "Details about the molecule"
+        },
+        "required": ["name", "wfmsUUID"]
+    }
+}

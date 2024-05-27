@@ -197,7 +197,7 @@ for idx, object_1_id in enumerate(experiment_metadata["Object 1"]):
 
 #%% Generate dictionary that is going to be used to generate the JSON-LD file
 
-selected_object_code = "PUBL57"
+selected_object_code = "STM185"
 all_objects_relations_dict = {}
 jsonld_graph = []
 jsonld_context = {"xsd": "http://www.w3.org/2001/XMLSchema#"}

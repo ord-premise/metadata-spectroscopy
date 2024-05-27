@@ -59,11 +59,12 @@ def get_object_provenance(session, object_id, objects, relations):
                              "scan-zmin-ang": "scan-zmin-m",
                              "scan-zmax-ang": "scan-zmax-m",
                              "afm-amplitude-ang": "afm-amplitude-m",
-                             "afm-cantilever-f0": "resonance-frequency-hz"}
+                             "afm-cantilever-f0": "resonance-frequency-hz",
+                             "force-convergence-threshold-bohrhartree": "force-convergence-threshold-m-J"}
     
     reversed_correction_dictionary = dict(zip(correction_dictionary.values(),correction_dictionary.keys()))
 
-    skip_properties = ["simulated", "simulation-method", "manufacturer-website"]
+    skip_properties = ["simulated", "simulation-method", "manufacturer-website", "simulation-type"]
     # Until here.
     
     # Convert openBIS property names into ontology ids
@@ -77,6 +78,7 @@ def get_object_provenance(session, object_id, objects, relations):
             continue
         # Until here.
         
+        print(prop)
         prop_ontology = schema_metadata["Ontology"][schema_metadata["openBIS"].str.lower() == prop.lower()].iloc[0]
         
         #TODO: This is just for retro-compability. Should be removed after correction
@@ -129,7 +131,7 @@ for _, row in schema_metadata.iterrows():
 if __name__ == "__main__":
     session = log_in("https://local.openbis.ch/openbis", "admin", "123456789")
     
-    selected_object_id = "20240409132527010-136"
+    selected_object_id = "20240424150511678-271"
     
     relations, objects = get_object_provenance(session, selected_object_id, {}, {})
     

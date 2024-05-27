@@ -1,0 +1,132 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/wafersubstrate.schema.json",
+    "title": "Wafer Substrate",
+    "description": "Wafer Substrate",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the wafer substrate."
+        },
+        "empaNumber": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "The Empa number of the wafer substrate."
+        },
+        "batch": {
+            "type": "char",
+            "description": "The batch letter where to the wafer substrate belongs."
+        },
+        "samplePlate": {
+            "type": "string",
+            "description": "Sample plate of the wafer substrate."
+        },
+        "substrates": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "Substrates.",
+                "properties": {
+                    "material": {
+                        "type": "string"
+                    },
+                    "thickness": {
+                        "type": "string"
+                    },
+                    "dopants": {
+                        "type": "string"
+                    },
+                    "coverage": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Details about the substrates."
+        },
+        "diameter": {
+            "type": "object",
+            "description": "Diameter of the wafer substrate.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "height": {
+            "type": "object",
+            "description": "Height of the wafer substrate.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "thickness": {
+            "type": "object",
+            "description": "Thickness of the wafer substrate.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "hazardous": {
+            "type": "boolean",
+            "description": "Whether the wafer substrate is dangerous."
+        },
+        "hazardousSpecification": {
+            "type": "string",
+            "description": "The specification of the type of danger."
+        },
+        "fridge": {
+            "type": "boolean",
+            "description": "Whether the wafer substrate must be stored in a fridge."
+        },
+        "noLight": {
+            "type": "boolean",
+            "description": "Whether the wafer substrate must be stored in darkness."
+        },
+        "dry": {
+            "type": "boolean",
+            "description": "Whether the wafer substrate must be stored in a dry environment."
+        },
+        "noOxygen": {
+            "type": "boolean",
+            "description": "Whether the wafer substrate must be stored in an anaerobic environment."
+        },
+        "otherStorageCondition": {
+            "type": "boolean",
+            "description": "Whether the wafer substrate must be stored following another special storage condition."
+        },
+        "otherStorageConditionSpecification": {
+            "type": "string",
+            "description": "The specification of the other special storage condition."
+        },
+        "receiveDate": {
+            "type": "string",
+            "description": "Date when the wafer substrate was received.",
+            "format": "date"
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments to the wafer substrate."
+        },
+        "storage": {
+            "$ref": "./storage.schema.json"
+        },
+        "chemist": {
+            "$ref": "./chemist.schema.json"
+        },
+        "required": ["name", "empaNumber", "batch"]
+    }
+}

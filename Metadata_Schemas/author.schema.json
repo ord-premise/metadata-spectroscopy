@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/author.schema.json",
+    "title": "Author",
+    "description": "Author",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the author."
+        },
+        "person": {
+            "$ref": "./person.schema.json"
+        },
+        "institution": {
+            "$ref": "./institution.schema.json"
+        },
+        "required": ["name", "person", "institution"]
+    }
+}

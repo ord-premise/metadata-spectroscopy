@@ -1,0 +1,60 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/publication.schema.json",
+    "title": "Publication",
+    "description": "Publication",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the publication."
+        },
+        "abstract": {
+            "type": "string",
+            "description": "The abstract of the publication."
+        },
+        "doi": {
+            "type": "string",
+            "description": "DOI"
+        },
+        "year": {
+            "type": "integer",
+            "minimum": 1900,
+            "description": "The year of the publication."
+        },
+        "url": {
+            "type": "string",
+            "description": "Open access version URL"
+        },
+        "datasetUrl": {
+            "type": "string",
+            "description": "Open access data URL"
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments to the publication."
+        },
+        "grants": {
+            "type": "array",
+            "items": {
+                "$ref": "./grant.schema.json"
+            },
+            "description": "Details about the grants"
+        },
+        "drafts": {
+            "type": "array",
+            "items": {
+                "$ref": "./draft.schema.json"
+            },
+            "description": "Details about the grants"
+        },
+        "authors": {
+            "type": "array",
+            "items": {
+                "$ref": "./author.schema.json",
+            },
+            "description": "Details about the authors"
+        },
+        "required": ["name", "abstract", "doi", "year", "authors"]
+    }
+}

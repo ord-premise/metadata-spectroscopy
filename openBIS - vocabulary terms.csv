@@ -1,0 +1,48 @@
+Vocabulary,Term code,Term label,Term description
+currency-list,euro,EUR,Euro
+currency-list,usd-dollar,USD,USD dollar
+currency-list,chf,CHF,Swiss franc
+draft-type-list,preprint,Preprint,Preprint
+draft-type-list,postprint,Postprint,Postprint
+tip-type-list,tuning-fork,Tuning fork,Tuning fork
+tip-preparation-type-list,fib,FIB,FIB
+tip-preparation-type-list,etched,Etched,Etched
+work-status-list,active,Active,Active
+work-status-list,inactive,Inactive,Inactive
+batch-list,a,a,Batch a
+batch-list,b,b,Batch b
+batch-list,c,c,Batch c
+batch-list,d,d,Batch d
+batch-list,e,e,Batch e
+vial-list,i,i,Vial i
+vial-list,ii,ii,Vial ii
+vial-list,iii,iii,Vial iii
+uhv-component-type-list,pump,Pump,Pump
+uhv-component-type-list,evaporator,Evaporator,Evaporator
+uhv-component-type-list,analyser,Analyser,Analyser
+uhv-component-type-list,gauge,Gauge,Gauge
+uhv-component-type-list,ion-photon-stage,Ion/Photon stage,Ion/Photon stage
+uhv-component-type-list,storage,Storage,Storage
+uhv-component-type-list,gas-panel,Gas panel,Gas panel
+uhv-component-type-list,port-valve,Port/Valve,Port/Valve
+uhv-component-type-list,manipulator-wobble-stick,Manipulator/Wobble stick,Manipulator/Wobble stick
+uhv-component-type-list,cryostat,Cryostat,Cryostat
+uhv-component-type-list,spm,SPM,SPM
+uhv-component-type-list,electronics,Electronics,Electronics
+uhv-component-type-list,various,Various,Various
+feedback-type-list,log-current,Log current,Log current
+feedback-type-list,abs-current,Abs current,Abs current
+piezo-config-active-calib-list,lhe,Lhe,Lhe
+scan-direction-list,down,down,down
+simulation-method-list,theory-approximation,Theory approximation,Theory approximation
+experiment-type-list,bias-spectroscopy,Bias spectroscopy,Bias spectroscopy
+experiment-type-list,z-spectroscopy,Z spectroscopy,Z spectroscopy
+filter-type-list,butterworth,Butterworth,Butterworth
+lockin-demodulated-signal-list,current,Current,Current
+p-model-list,single-probe,Single probe,Single probe
+p-model-list,2pp-resp-ptcta,2PP RESP PTCTA,2PP RESP PTCTA
+p-model-list,2pp-resp-pentacene,2PP RESP pentacene,2PP RESP pentacene
+simulation-type-list,simulation-type-term,Simulation type term,Simulation type term
+exchange-correlation-functional-list,exchange-correlation-function,Exchange correlation function,Exchange correlation function
+method-type-list,neb,NEB,NEB
+method-type-list,string-method,String method,String method

@@ -369,8 +369,9 @@ class OpenBISDatabase:
         
         return False
 
+#%% Save Database
+
 if __name__ == "__main__":
-    #%% Save Database
 
     # Create OpenBISDatabase instance
     openbis_database = OpenBISDatabase()

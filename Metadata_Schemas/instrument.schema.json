@@ -1,0 +1,51 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/instrument.schema.json",
+    "title": "Instrument",
+    "description": "Instrument",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the instrument."
+        },
+        "serialNumber": {
+            "type": "string",
+            "description": "The serial number of the instrument."
+        },
+        "empaId": {
+            "type": "string",
+            "description": "Empa ID (given by Empa to expensive objects)."
+        },
+        "documentationWebsite": {
+            "type": "string",
+            "description": "Documentation website."
+        },
+        "receiveDate": {
+            "type": "string",
+            "description": "Date when the instrument was received.",
+            "format": "date"
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments to the instrument."
+        },
+        "uhvComponents": {
+            "type": "array",
+            "items": {
+                "$ref": "./uhvcomponent.schema.json"
+            },
+            "description": "UHV components."
+        },
+        "room": {
+            "$ref": "./room.schema.json"
+        },
+        "manufacturer": {
+            "$ref": "./manufacturer.schema.json"
+        },
+        "tipSensor": {
+            "$ref": "./tipsensor.schema.json"
+        },
+        "required": ["name", "serialNumber", "empaId"]
+    }
+}

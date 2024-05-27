@@ -1,0 +1,49 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/geoopt.schema.json",
+    "title": "Geometry Optimisation",
+    "description": "Geometry Optimisation schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the geometry optimisation object."
+        },
+        "forceConvergenceThreshold": {
+            "type": "object",
+            "description": "Maximum force allowed on each atom before the optimisation is converged",
+            "properties": {
+                "charge": {
+                    "type": "number"
+                },
+                "magneticMomentum": {
+                    "type": "number"
+                }
+            }
+        },
+        "geometryConstraints": {
+            "type": "array",
+            "description": "Geometrical constraints defined in the simulation.",
+            "items": {
+                "type": "number"
+            }
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments to the band structure."
+        },
+        "atomisticModel": {
+            "$ref": "./atomisticmodel.schema.json",
+            "description": "Details about the atomistic model"
+        },
+        "densityFunctionalTheory": {
+            "$ref": "./dft.schema.json",
+            "description": "Details about the DFT"
+        },
+        "empiricalModeling": {
+            "$ref": "./empiricalmodeling.schema.json",
+            "description": "Details about the empirical modeling"
+        },
+        "required": ["name", "forceConvergenceThreshold"]
+    }
+}

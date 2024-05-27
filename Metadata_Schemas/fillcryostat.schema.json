@@ -1,0 +1,53 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/fillcryostat.schema.json",
+    "title": "Fill Cryostat",
+    "description": "Fill Cryostat",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the fill cryostat."
+        },
+        "weightBefore": {
+            "type": "object",
+            "description": "Weight of the container (before).",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "weightAfter": {
+            "type": "object",
+            "description": "Weight of the container (after).",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "substance": {
+            "type": "string",
+            "description": "The name of the cryostat substance."
+        },
+        "dewar": {
+            "type": "string",
+            "description": "The number of the container."
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments to the molecule."
+        },
+        "uhvComponent": {
+            "$ref": "./uhvcomponent.schema.json"
+        },
+        "required": ["name"]
+    }
+}

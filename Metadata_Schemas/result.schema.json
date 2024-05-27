@@ -1,0 +1,57 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/result.schema.json",
+    "title": "Result",
+    "description": "Result",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the result."
+        },
+        "description": {
+            "type": "string",
+            "description": "The description of the result."
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments to the result."
+        },
+        "stms": {
+            "type": "array",
+            "items": {
+                "$ref": "./stm.schema.json"
+            },
+            "description": "Details about the STMs"
+        },
+        "simulations": {
+            "type": "array",
+            "items": {
+                "$ref": "./simulation.schema.json"
+            },
+            "description": "Details about the simulation."
+        },
+        "afms": {
+            "type": "array",
+            "items": {
+                "$ref": "./afm.schema.json"
+            },
+            "description": "Details about the AFMs"
+        },
+        "stss": {
+            "type": "array",
+            "items": {
+                "$ref": "./sts.schema.json"
+            },
+            "description": "Details about the STSs"
+        },
+        "softwares": {
+            "type": "array",
+            "items": {
+                "$ref": "./software.schema.json"
+            },
+            "description": "Details about the used softwares"
+        },
+        "required": ["name", "description"]
+    }
+}

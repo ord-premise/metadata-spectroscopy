@@ -1,0 +1,92 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/deposition.schema.json",
+    "title": "Deposition",
+    "description": "Deposition",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the deposition."
+        },
+        "stabilitationTime": {
+            "type": "object",
+            "description": "Time to stabilise.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "depositionTime": {
+            "type": "object",
+            "description": "Time to deposit.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "pressure": {
+            "type": "object",
+            "description": "Pressure of the deposition.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "substrateTemperature": {
+            "type": "object",
+            "description": "Substrate temperature of the deposition.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "moleculeTemperature": {
+            "type": "object",
+            "description": "Molecule temperature of the deposition.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "evaporatorSlot": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Evaporator slot number."
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments to the deposition."
+        },
+        "annealing": {
+            "$ref": "./annealing.schema.json"
+        },
+        "molecule": {
+            "$ref": "./molecule.schema.json"
+        },
+        "uhvComponent": {
+            "$ref": "./uhvcomponent.schema.json"
+        },
+        "required": ["name", "stabilitationTime", "depositionTime", "molecule"]
+    }
+}

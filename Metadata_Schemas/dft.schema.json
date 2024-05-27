@@ -1,0 +1,140 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/dft.schema.json",
+    "title": "Density Functional Theory",
+    "description": "Density functional theory schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the density functional theory object."
+        },
+        "SCFConvergenceThreshold": {
+            "type": "object",
+            "description": "Threshold for the convergence of the wave function.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "XCFunctional": {
+            "type": "string",
+            "description": "Approximation used for the exchanged correlation functional.",
+            "enum": ["Exchange correlation function"]
+        },
+        "spinPolarisedCalculation": {
+            "type": "boolean",
+            "description": "Whether spin polarisation calculation is considered."
+        },
+        "initialSpinGuesses": {
+            "type": "array",
+            "description": "Initial value of the magnetisation for each atom.",
+            "items": {
+                "type": "number"
+            }
+        },
+        "spinMultiplicity": {
+            "type": "boolean",
+            "description": "Spin multiplicity."
+        },
+        "absoluteMagnetisation": {
+            "type": "object",
+            "description": "Output value of the absolute magnetisation.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "totalMagnetisation": {
+            "type": "object",
+            "description": "Output value of the total magnetisation.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "totalSpinSquared": {
+            "type": "number",
+            "description": "Output value of the eigenvalue of the square operator to control spin contamination."
+        },
+        "netCharge": {
+            "type": "number",
+            "description": "Difference between electronic and ionic charge of the system (+1 means one electron is being removed from the neutral charge system)."
+        },
+        "smearing": {
+            "type": "object",
+            "description": "Energy value for electron broadening function for fractional occupation of orbitals.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "fermiDiracTemperature": {
+            "type": "object",
+            "description": "Temperature used for broadening in case of Fermi-Dirac broadening function for fractional occupation of orbitals.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "forceMultiplicity": {
+            "type": "boolean",
+            "description": "If True multiplicity is constrained to the input value in a calculation with broadening of the occupation of orbitals."
+        },
+        "outputMullikenPopulationAnalysis": {
+            "type": "array",
+            "description": "Charges and magnetic momentum for each atom resulting from Muliken population analysis.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "charge": {
+                        "type": "number"
+                    },
+                    "magneticMomentum": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "outputHirshfeldPopulationAnalysis": {
+            "type": "array",
+            "description": "Charges and magnetic momentum for each atom resulting from Hirshfeld population analysis.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "charge": {
+                        "type": "number"
+                    },
+                    "magneticMomentum": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments to the density functional theory."
+        },
+        "required": ["name"]
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/tipsensor.schema.json",
+    "title": "Tip Sensor",
+    "description": "Tip Sensor",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the tip sensor."
+        },
+        "tipSensorType": {
+            "type": "string",
+            "enum": ["Tuning fork"],
+            "description": "Tip sensor type."
+        },
+        "wireMaterial": {
+            "type": "string",
+            "description": "Wire material."
+        },
+        "holderId": {
+            "type": "string",
+            "description": "The label on the sensor."
+        },
+        "thickness": {
+            "type": "object",
+            "description": "Thickness of the tip sensor.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "length": {
+            "type": "object",
+            "description": "Length of the tip sensor.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "resonanceFrequency": {
+            "type": "object",
+            "description": "Resonance frequency of the tip sensor.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "qualityFactor": {
+            "type": "integer",
+            "description": "Quality factor or Q factor."
+        },
+        "referenceNumber": {
+            "type": "integer",
+            "description": "Reference number of the tip sensor."
+        },
+        "deviceParameters": {
+            "type": "string",
+            "description": "Device parameters."
+        },
+        "receiveDate": {
+            "type": "string",
+            "description": "Date when the tip sensor was received.",
+            "format": "date"
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments of the tip sensor."
+        },
+        "required": ["name", "tipSensorType", "thickness", "length", "resonanceFrequency", "qualityFactor", "receiveDate"]
+    }
+}

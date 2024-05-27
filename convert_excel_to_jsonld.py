@@ -38,6 +38,9 @@ def get_object_metadata(all_objects_metadata, selected_object):
     
     # Obtain the object metadata
     object_metadata = all_objects_metadata[object_type][all_objects_metadata[object_type]["ID"] == selected_object].to_dict('records')
+    print(selected_object)
+    print(all_objects_metadata[object_type]["ID"])
+    print(object_metadata)
     object_metadata = object_metadata[0]
     object_metadata.pop("ID", None)
     
@@ -290,9 +293,9 @@ def merge_relations(d):
     return result
 
 #%% Load excel datasheets
-root_path = "C:\\Users\\dafa\\Documents\\git\\nanotech-premise"
+root_path = "C:\\Users\\dafa\\Documents\\git\\metadata-spectroscopy"
 metadata_openbis_schema_filename = f"{root_path}\\Metadata_Schema_for_openBIS.xlsx"
-metadata_experiment_filename = f"{root_path}\\Metadata_Experiment_Objects.xlsx"
+metadata_experiment_filename = f"{root_path}\\multiple.xlsx"
 
 # Get objects metadata schema
 schema_metadata = pd.read_excel(metadata_openbis_schema_filename, sheet_name = "Metadata Schema")
@@ -305,7 +308,7 @@ experiment_objects_excel = pd.ExcelFile(metadata_experiment_filename)
 experiment_objects_excel_sheets_names = experiment_objects_excel.sheet_names
 
 # Get the experiment example metadata from the Excel file
-experiment_metadata = experiment_objects_excel.parse("Experiment")
+experiment_metadata = experiment_objects_excel.parse("Relations")
 # There are some objects that have more than one parent. In those cases the left column
 # only has the code of object on the first relation and then it is empty for all the following ones.
 # Therefore, this functions fill the rows with the first code.
@@ -348,10 +351,10 @@ for idx, object_1_id in enumerate(experiment_metadata["Object 1"]):
     all_objects_relations.loc[object_1_id, object_2_id] = relation_id
 
 #%% Generate dictionary that is going to be used to generate the JSON-LD file
-selected_object = "PUBL1"
+selected_object = "STM185"
 all_objects_relations_dict = compute_jsonld_data(all_objects_relations, object_code_ontology_map, schema_ontology, all_objects_metadata, selected_object)
 all_objects_relations_dict_merged = merge_relations(all_objects_relations_dict)
-all_objects_relations_dict_merged["@graph"] = all_objects_relations_dict_merged["@graph"]["PUBL1"]
+all_objects_relations_dict_merged["@graph"] = all_objects_relations_dict_merged["@graph"][selected_object]
 
 #%% Export to JSON-LD
 jsonld_object = json.dumps(all_objects_relations_dict_merged, indent=4)

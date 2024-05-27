@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/empiricalmodeling.schema.json",
+    "title": "Empirical Modeling",
+    "description": "Empirical Modeling schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the Empirical Modeling object."
+        },
+        "required": ["name"]
+    }
+}

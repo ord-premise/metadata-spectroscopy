@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/manufacturer.schema.json",
+    "title": "Manufacturer",
+    "description": "Manufacturer",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the manufacturer."
+        },
+        "email": {
+            "type": "string",
+            "description": "The email of the manufacturer."
+        },
+        "workPhone": {
+            "type": "string",
+            "description": "The work phone of the manufacturer."
+        },
+        "required": ["name", "email"]
+    }
+}

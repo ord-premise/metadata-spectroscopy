@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/room.schema.json",
+    "title": "Room",
+    "description": "Room",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the room."
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments about the room."
+        },
+        "institution": {
+            "$ref": "./institution.schema.json",
+            "description": "Details about the institution"
+        },
+        "required": ["name", "institution"]
+    }
+}

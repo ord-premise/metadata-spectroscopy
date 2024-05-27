@@ -1,4 +1,185 @@
 {
+    "@graph": [
+        {
+            "atomsPositions": "null",
+            "name": "Atomistic Model 1",
+            "description": "A nice atomistic model",
+            "cellVectors": "null",
+            "pbcx": true,
+            "pbcy": true,
+            "pbcz": true,
+            "optimised": false,
+            "wfmsUUID": "9f7242f7-78a1-46f1-ad9e-2ff22d812b2c",
+            "@id": "ATOMMODEL177",
+            "@type": "AtomisticModel"
+        },
+        {
+            "name": "GeoOpt Simulation",
+            "wfmsUUID": "7361396a-2170-4360-b361-1b0524da210a",
+            "wfmsURL": "null",
+            "description": "GeoOpt Simulation",
+            "@id": "SIMUL180",
+            "@type": "Simulation",
+            "atomisticmodel": {
+                "@id": "#ATOMMODEL177"
+            }
+        },
+        {
+            "forceConvergenceThreshold": "null",
+            "geometryConstraints": "null",
+            "name": "null",
+            "@id": "GEOOPT181",
+            "@type": "GeometryOptimisation",
+            "simulation": {
+                "@id": "#SIMUL180"
+            }
+        },
+        {
+            "atomsPositions": "null",
+            "name": "Atomistic Model 1",
+            "description": "A nice atomistic model",
+            "cellVectors": "null",
+            "pbcx": false,
+            "pbcy": false,
+            "pbcz": false,
+            "optimised": false,
+            "wfmsUUID": "efbdf737-6370-46ba-b406-a47ad94b4fa8",
+            "@id": "ATOMMODEL178",
+            "@type": "AtomisticModel",
+            "geometryoptimisation": {
+                "@id": "#GEOOPT181"
+            }
+        },
+        {
+            "name": "GeoOpt Simulation",
+            "wfmsUUID": "3d9eef8d-34cc-431c-a67f-51d2fba4c193",
+            "wfmsURL": "null",
+            "description": "GeoOpt Simulation",
+            "@id": "SIMUL182",
+            "@type": "Simulation",
+            "atomisticmodel": {
+                "@id": "#ATOMMODEL178"
+            }
+        },
+        {
+            "forceConvergenceThreshold": "null",
+            "geometryConstraints": "null",
+            "name": "null",
+            "@id": "GEOOPT183",
+            "@type": "GeometryOptimisation",
+            "simulation": {
+                "@id": "#SIMUL182"
+            }
+        },
+        {
+            "iupacName": "methane",
+            "sumFormula": "CH4",
+            "smiles": "C",
+            "casNumber": "null",
+            "name": "null",
+            "@id": "MOL4",
+            "@type": "Molecule"
+        },
+        {
+            "atomsPositions": "null",
+            "name": "Atomistic Model 1",
+            "description": "A nice atomistic model",
+            "cellVectors": "null",
+            "pbcx": true,
+            "pbcy": true,
+            "pbcz": true,
+            "optimised": true,
+            "wfmsUUID": "2a1a7d77-09a3-46b3-b6b1-dc9c7bf3cc97",
+            "@id": "ATOMMODEL179",
+            "@type": "AtomisticModel",
+            "geometryoptimisation": {
+                "@id": "#GEOOPT183"
+            },
+            "molecule": {
+                "@id": "#MOL4"
+            }
+        },
+        {
+            "name": "Simulation STM",
+            "wfmsUUID": "86363a10-db22-4576-baed-ddb86f0b8d2f",
+            "wfmsURL": "null",
+            "description": "Simulation",
+            "@id": "SIMUL184",
+            "@type": "Simulation"
+        },
+        {
+            "name": "Simulated STM",
+            "recordingTime": "null",
+            "acquisitionTime": "null",
+            "biasSetpoint": "null",
+            "biasCalibrationFactor": "null",
+            "biasCalibrationOffset": "null",
+            "currentSetpoint": "null",
+            "currentCalibrationFactor": "null",
+            "currentCalibrationOffset": "null",
+            "currentGain": "null",
+            "z": "null",
+            "feedbackActive": "null",
+            "feedbackType": "null",
+            "zControllerSetpoint": "null",
+            "zControllerPGain": "null",
+            "zControllerIGain": "null",
+            "zControllerTimeConst": "null",
+            "zControllerTipLift": "null",
+            "zControllerSwitchOffDelay": "null",
+            "piezoActiveCalib": "null",
+            "piezoSensitivityX": "null",
+            "piezoSensitivityY": "null",
+            "piezoSensitivityZ": "null",
+            "piezoHVGainX": "null",
+            "piezoHVGainY": "null",
+            "piezoHVGainZ": "null",
+            "scanSlopeX": "null",
+            "scanSlopeY": "null",
+            "piezoCurvatureRadiusX": "null",
+            "piezoCurvatureRadiusY": "null",
+            "piezo2ndOrderCorrectionX": "null",
+            "piezo2ndOrderCorrectionY": "null",
+            "piezoDriftX": "null",
+            "piezoDriftY": "null",
+            "piezoDriftZ": "null",
+            "piezoDriftCorrectionStatus": "null",
+            "scanField": "null",
+            "scanAngle": "null",
+            "scanOffsetX": "null",
+            "scanOffsetY": "null",
+            "scanTimeX": "null",
+            "scanTimeY": "null",
+            "scanRangeX": "null",
+            "scanRangeY": "null",
+            "scanPixelsX": "null",
+            "scanPixelsY": "null",
+            "scanSpeedForward": "null",
+            "scanSpeedBackwards": "null",
+            "scanDirection": "null",
+            "dwellTime": "null",
+            "sampleTemperature": "null",
+            "recordingTemperature": "null",
+            "eMin": "null",
+            "eMax": "null",
+            "dE": "null",
+            "FWHM": "null",
+            "extrapPlane": "null",
+            "constantHeight": "null",
+            "constantCurrent": "null",
+            "pTipRatio": "null",
+            "description": "A nice simulated STM",
+            "comments": "null",
+            "@id": "STM185",
+            "@type": "STM",
+            "atomisticmodel": {
+                "@id": "#ATOMMODEL179"
+            },
+            "simulation": {
+                "@id": "#SIMUL184"
+            }
+        }
+    ],
     "@context": {
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "name": {
@@ -249,8 +430,12 @@
             "@id": "http://schema.org/comment",
             "@type": "xsd:string"
         },
-        "STM": {
-            "@id": "http://purl.obolibrary.org/obo/CHMO_0000132",
+        "AtomisticModel": {
+            "@id": "https://w3id.org/emmo#EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213",
+            "@type": "@id"
+        },
+        "atomisticmodel": {
+            "@id": "https://w3id.org/emmo#EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213",
             "@type": "@id"
         },
         "atomsPositions": {
@@ -281,12 +466,12 @@
             "@id": "http://www.semanticweb.org/dafa/ontologies/2024/2/SPMOnto#SPMOnto_53c7237a_463b_4620_87d2_e76b69276bfb",
             "@type": "xsd:string"
         },
-        "AtomisticModel": {
-            "@id": "https://w3id.org/emmo#EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213",
+        "GeometryOptimisation": {
+            "@id": "http://www.semanticweb.org/dafa/ontologies/2024/2/SPMOnto#SPMOnto_e8e49b4c_0be6_40de_9305_78d23dcea418",
             "@type": "@id"
         },
-        "hasPart": {
-            "@id": "https://schema.org/hasPart",
+        "geometryoptimisation": {
+            "@id": "http://www.semanticweb.org/dafa/ontologies/2024/2/SPMOnto#SPMOnto_e8e49b4c_0be6_40de_9305_78d23dcea418",
             "@type": "@id"
         },
         "forceConvergenceThreshold": {
@@ -297,16 +482,24 @@
             "@id": "http://www.semanticweb.org/dafa/ontologies/2024/2/SPMOnto#SPMOnto_55e6e83f_0b35_435b_a23b_7ed1cbce6c19",
             "@type": "xsd:hexBinary"
         },
-        "GeometryOptimisation": {
-            "@id": "http://www.semanticweb.org/dafa/ontologies/2024/2/SPMOnto#SPMOnto_e8e49b4c_0be6_40de_9305_78d23dcea418",
+        "Simulation": {
+            "@id": "http://purl.obolibrary.org/obo/NCIT_C16461",
+            "@type": "@id"
+        },
+        "simulation": {
+            "@id": "http://purl.obolibrary.org/obo/NCIT_C16461",
             "@type": "@id"
         },
         "wfmsURL": {
             "@id": "http://www.semanticweb.org/dafa/ontologies/2024/2/SPMOnto#SPMOnto_dcb7db8f_c0c7_44f4_9493_2ce40decfa62",
             "@type": "xsd:string"
         },
-        "Simulation": {
-            "@id": "http://purl.obolibrary.org/obo/NCIT_C16461",
+        "Molecule": {
+            "@id": "https://w3id.org/emmo#EMMO_3397f270_dfc1_4500_8f6f_4d0d85ac5f71",
+            "@type": "@id"
+        },
+        "molecule": {
+            "@id": "https://w3id.org/emmo#EMMO_3397f270_dfc1_4500_8f6f_4d0d85ac5f71",
             "@type": "@id"
         },
         "iupacName": {
@@ -324,166 +517,6 @@
         "casNumber": {
             "@id": "http://emmo.info/emmo#EMMO_d2a47cd8_662f_438f_855a_b4378eb992ff",
             "@type": "xsd:string"
-        },
-        "Molecule": {
-            "@id": "https://w3id.org/emmo#EMMO_3397f270_dfc1_4500_8f6f_4d0d85ac5f71",
-            "@type": "@id"
         }
-    },
-    "@graph": {
-        "name": "Simulated STM",
-        "recordingTime": null,
-        "acquisitionTime": null,
-        "biasSetpoint": null,
-        "biasCalibrationFactor": null,
-        "biasCalibrationOffset": null,
-        "currentSetpoint": null,
-        "currentCalibrationFactor": null,
-        "currentCalibrationOffset": null,
-        "currentGain": null,
-        "z": null,
-        "feedbackActive": null,
-        "feedbackType": null,
-        "zControllerSetpoint": null,
-        "zControllerPGain": null,
-        "zControllerIGain": null,
-        "zControllerTimeConst": null,
-        "zControllerTipLift": null,
-        "zControllerSwitchOffDelay": null,
-        "piezoActiveCalib": null,
-        "piezoSensitivityX": null,
-        "piezoSensitivityY": null,
-        "piezoSensitivityZ": null,
-        "piezoHVGainX": null,
-        "piezoHVGainY": null,
-        "piezoHVGainZ": null,
-        "scanSlopeX": null,
-        "scanSlopeY": null,
-        "piezoCurvatureRadiusX": null,
-        "piezoCurvatureRadiusY": null,
-        "piezo2ndOrderCorrectionX": null,
-        "piezo2ndOrderCorrectionY": null,
-        "piezoDriftX": null,
-        "piezoDriftY": null,
-        "piezoDriftZ": null,
-        "piezoDriftCorrectionStatus": null,
-        "scanField": null,
-        "scanAngle": null,
-        "scanOffsetX": null,
-        "scanOffsetY": null,
-        "scanTimeX": null,
-        "scanTimeY": null,
-        "scanRangeX": null,
-        "scanRangeY": null,
-        "scanPixelsX": null,
-        "scanPixelsY": null,
-        "scanSpeedForward": null,
-        "scanSpeedBackwards": null,
-        "scanDirection": null,
-        "dwellTime": null,
-        "sampleTemperature": null,
-        "recordingTemperature": null,
-        "eMin": null,
-        "eMax": null,
-        "dE": null,
-        "FWHM": null,
-        "extrapPlane": null,
-        "constantHeight": null,
-        "constantCurrent": null,
-        "pTipRatio": null,
-        "description": "A nice simulated STM",
-        "comments": null,
-        "@type": "STM",
-        "hasPart": [
-            {
-                "atomsPositions": null,
-                "name": "Atomistic Model 1",
-                "description": "A nice atomistic model",
-                "cellVectors": null,
-                "pbcx": true,
-                "pbcy": true,
-                "pbcz": true,
-                "optimised": true,
-                "wfmsUUID": "2a1a7d77-09a3-46b3-b6b1-dc9c7bf3cc97",
-                "@type": "AtomisticModel",
-                "hasPart": [
-                    {
-                        "forceConvergenceThreshold": null,
-                        "geometryConstraints": null,
-                        "name": null,
-                        "@type": "GeometryOptimisation",
-                        "hasPart": [
-                            {
-                                "name": "GeoOpt Simulation",
-                                "wfmsUUID": "3d9eef8d-34cc-431c-a67f-51d2fba4c193",
-                                "wfmsURL": null,
-                                "description": "GeoOpt Simulation",
-                                "@type": "Simulation",
-                                "hasPart": [
-                                    {
-                                        "atomsPositions": null,
-                                        "name": "Atomistic Model 1",
-                                        "description": "A nice atomistic model",
-                                        "cellVectors": null,
-                                        "pbcx": false,
-                                        "pbcy": false,
-                                        "pbcz": false,
-                                        "optimised": false,
-                                        "wfmsUUID": "efbdf737-6370-46ba-b406-a47ad94b4fa8",
-                                        "@type": "AtomisticModel",
-                                        "hasPart": [
-                                            {
-                                                "forceConvergenceThreshold": null,
-                                                "geometryConstraints": null,
-                                                "name": null,
-                                                "@type": "GeometryOptimisation",
-                                                "hasPart": [
-                                                    {
-                                                        "name": "GeoOpt Simulation",
-                                                        "wfmsUUID": "7361396a-2170-4360-b361-1b0524da210a",
-                                                        "wfmsURL": null,
-                                                        "description": "GeoOpt Simulation",
-                                                        "@type": "Simulation",
-                                                        "hasPart": [
-                                                            {
-                                                                "atomsPositions": null,
-                                                                "name": "Atomistic Model 1",
-                                                                "description": "A nice atomistic model",
-                                                                "cellVectors": null,
-                                                                "pbcx": true,
-                                                                "pbcy": true,
-                                                                "pbcz": true,
-                                                                "optimised": false,
-                                                                "wfmsUUID": "9f7242f7-78a1-46f1-ad9e-2ff22d812b2c",
-                                                                "@type": "AtomisticModel"
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "iupacName": "methane",
-                        "sumFormula": "CH4",
-                        "smiles": "C",
-                        "casNumber": null,
-                        "name": null,
-                        "@type": "Molecule"
-                    }
-                ]
-            },
-            {
-                "name": "Simulation STM",
-                "wfmsUUID": "86363a10-db22-4576-baed-ddb86f0b8d2f",
-                "wfmsURL": null,
-                "description": "Simulation",
-                "@type": "Simulation"
-            }
-        ]
     }
 }

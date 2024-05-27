@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/person.schema.json",
+    "title": "Person",
+    "description": "Person",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the person."
+        },
+        "shortName": {
+            "type": "string",
+            "description": "The username of the person."
+        },
+        "workStatus": {
+            "type": "string",
+            "enum": ["active", "inactive"],
+            "description": "Work status."
+        },
+        "email": {
+            "type": "string",
+            "description": "The email of the person."
+        },
+        "workPhone": {
+            "type": "string",
+            "description": "The work phone of the person."
+        },
+        "mobilePhone": {
+            "type": "string",
+            "description": "The mobile phone of the person."
+        },
+        "required": ["name", "shortName", "workStatus", "email", "workPhone"]
+    }
+}

@@ -1,0 +1,122 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/molecule.schema.json",
+    "title": "Molecule",
+    "description": "A molecule in the inventory",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the molecule."
+        },
+        "iupacName": {
+            "type": "string",
+            "description": "The IUPAC name of the molecule."
+        },
+        "sumFormula": {
+            "type": "string",
+            "description": "The chemical formula of the molecule."
+        },
+        "smiles": {
+            "type": "string",
+            "description": "The SMILES of the molecule."
+        },
+        "casNumber": {
+            "type": "string",
+            "description": "The CAS number of the molecule."
+        },
+        "empaNumber": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "The Empa number of the molecule."
+        },
+        "batch": {
+            "type": "char",
+            "description": "The batch letter where to the molecule belongs."
+        },
+        "vial": {
+            "type": "string",
+            "description": "The vial letter where to the molecule belongs."
+        },
+        "hazardous": {
+            "type": "boolean",
+            "description": "Whether the molecule is dangerous."
+        },
+        "hazardousSpecification": {
+            "type": "string",
+            "description": "The specification of the type of danger."
+        },
+        "evaporationTemperatures": {
+            "type": "array",
+            "description": "Evaporation temperatures, used instruments, and the datetime when the evaporations were performed, separated by commas.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "fridge": {
+            "type": "boolean",
+            "description": "Whether the molecule must be stored in a fridge."
+        },
+        "noLight": {
+            "type": "boolean",
+            "description": "Whether the molecule must be stored in darkness."
+        },
+        "dry": {
+            "type": "boolean",
+            "description": "Whether the molecule must be stored in a dry environment."
+        },
+        "noOxygen": {
+            "type": "boolean",
+            "description": "Whether the molecule must be stored in an anaerobic environment."
+        },
+        "otherStorageCondition": {
+            "type": "boolean",
+            "description": "Whether the molecule must be stored following another special storage condition."
+        },
+        "otherStorageConditionSpecification": {
+            "type": "string",
+            "description": "The specification of the other special storage condition."
+        },
+        "chemistMoleculeName": {
+            "type": "string",
+            "description": "Molecule name given by the chemist that synthetised it."
+        },
+        "amount": {
+            "type": "object",
+            "description": "Amount of molecule.",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "receiveDate": {
+            "type": "string",
+            "description": "Date when the molecule was received.",
+            "format": "date"
+        },
+        "comments": {
+            "type": "string",
+            "description": "Comments to the molecule."
+        },
+        "chemist": {
+            "$ref": "./chemist.schema.json",
+            "description": "Details about the chemist"
+        },
+        "storage": {
+            "$ref": "./storage.schema.json",
+            "description": "Details about the storage"
+        },
+        "molecules": {
+            "type": "array",
+            "items": {
+                "$ref": "./molecule.schema.json"
+            },
+            "description": "Details about the parent molecules"
+        },
+        "required": ["name", "sumFormula", "smiles", "empaNumber", "batch"]
+    }
+}

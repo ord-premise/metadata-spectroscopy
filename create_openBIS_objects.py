@@ -113,6 +113,8 @@ for openbis_property in all_openbis_properties:
     
 # Object types
 for openbis_object in all_openbis_objects:
+    sections = openbis_object.pop('sections')
+    
     try:
         object_type = session.get_object_type(openbis_object["code"])
     except ValueError:
@@ -124,7 +126,6 @@ for openbis_object in all_openbis_objects:
                                               showParents=True,
                                               showParentMetadata=False,
                                               **openbis_object).save()
-    sections = openbis_object.pop('sections')
     for section, properties in sections.items():
         print(section, properties)
         for property_type in properties:
