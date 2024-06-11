@@ -140,7 +140,6 @@ def compute_flat_jsonld_graph(all_relations, selected_object_code, jsonld_graph,
 root_path = "C:\\Users\\dafa\\Documents\\git\\metadata-spectroscopy"
 metadata_openbis_schema_filename = f"{root_path}\\Metadata_Schema_for_openBIS.xlsx"
 metadata_experiment_filename = f"{root_path}\\Metadata_Experiment_Objects.xlsx"
-metadata_experiment_filename = f"{root_path}\\multiple.xlsx"
 
 # Get objects metadata schema
 schema_metadata = pd.read_excel(metadata_openbis_schema_filename, sheet_name = "Metadata Schema")
@@ -197,7 +196,7 @@ for idx, object_1_id in enumerate(experiment_metadata["Object 1"]):
 
 #%% Generate dictionary that is going to be used to generate the JSON-LD file
 
-selected_object_code = "STM185"
+selected_object_code = "PUBL1"
 all_objects_relations_dict = {}
 jsonld_graph = []
 jsonld_context = {"xsd": "http://www.w3.org/2001/XMLSchema#"}
@@ -208,7 +207,7 @@ all_objects_relations_dict["@graph"], all_objects_relations_dict["@context"] = c
 jsonld_object = json.dumps(all_objects_relations_dict, indent=4)
  
 # Writing to sample.json
-with open(f"{root_path}\\selected_object_schema_2.json", "w") as outfile:
+with open(f"{root_path}\\selected_object_schema.json", "w") as outfile:
     outfile.write(jsonld_object)
 
 """

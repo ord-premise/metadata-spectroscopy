@@ -135,7 +135,7 @@ if __name__ == "__main__":
     
     relations, objects = get_object_provenance(session, selected_object_id, {}, {})
     
-    with pd.ExcelWriter('multiple.xlsx') as writer:
+    with pd.ExcelWriter('Metadata_Experiment_Objects.xlsx') as writer:
         for object_class in objects:
             objects_df = pd.DataFrame.from_dict(objects[object_class], orient = "index")
             objects_df = objects_df.reset_index()

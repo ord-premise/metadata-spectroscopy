@@ -295,7 +295,6 @@ def merge_relations(d):
 #%% Load excel datasheets
 root_path = "C:\\Users\\dafa\\Documents\\git\\metadata-spectroscopy"
 metadata_openbis_schema_filename = f"{root_path}\\Metadata_Schema_for_openBIS.xlsx"
-metadata_experiment_filename = f"{root_path}\\multiple.xlsx"
 
 # Get objects metadata schema
 schema_metadata = pd.read_excel(metadata_openbis_schema_filename, sheet_name = "Metadata Schema")
@@ -303,6 +302,7 @@ schema_metadata = pd.read_excel(metadata_openbis_schema_filename, sheet_name = "
 schema_ontology = pd.read_excel(metadata_openbis_schema_filename, sheet_name = "Ontology - definition")
 
 # Open the experiment example metadata Excel file
+metadata_experiment_filename = f"{root_path}\\Metadata_Experiment_Objects.xlsx"
 experiment_objects_excel = pd.ExcelFile(metadata_experiment_filename)
 # Get all the datasheet names inside the Excel file
 experiment_objects_excel_sheets_names = experiment_objects_excel.sheet_names
@@ -351,7 +351,7 @@ for idx, object_1_id in enumerate(experiment_metadata["Object 1"]):
     all_objects_relations.loc[object_1_id, object_2_id] = relation_id
 
 #%% Generate dictionary that is going to be used to generate the JSON-LD file
-selected_object = "STM185"
+selected_object = "PUBL1"
 all_objects_relations_dict = compute_jsonld_data(all_objects_relations, object_code_ontology_map, schema_ontology, all_objects_metadata, selected_object)
 all_objects_relations_dict_merged = merge_relations(all_objects_relations_dict)
 all_objects_relations_dict_merged["@graph"] = all_objects_relations_dict_merged["@graph"][selected_object]
