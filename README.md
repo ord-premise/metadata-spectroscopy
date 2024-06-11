@@ -54,9 +54,9 @@ Common metadata schema to store and access microscopy data from simulations and 
 This repository contains all the files needed for creating the provenance of experiments and simulations in the context of microscopy.
 
 ## External links
-https://www.ebi.ac.uk/ols4/
-https://www.w3.org/TR/json-ld11/
-https://github.com/emmo-repo/
+- https://www.ebi.ac.uk/ols4/
+- https://www.w3.org/TR/json-ld11/
+- https://github.com/emmo-repo/
 
 ## Acknowledgements
 The [PREMISE](https://ord-premise.github.io/) project is supported by the [Open Research Data Program](https://ethrat.ch/en/eth-domain/open-research-data/) of the ETH Board.
