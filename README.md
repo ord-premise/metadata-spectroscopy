@@ -6,49 +6,17 @@ Common metadata schema to store and access microscopy data from simulations and 
 - Carlo Pignedoli
 
 ## Goal
-* `Metadata_Schema_for_openBIS.xlsx` defines the information needed to map the objects used to define experiments and simulations within the electronic lab notebook (ELN). It contains seven datasheets:
-    - The `Metadata Schema` contains the objects together with their parameters. It comprises ten columns:
-        - `Metadata`: The name of the object/property (metadata);
-        - `Unit`: The unit used on the respective metadata;
-        - `Input`: Who introduces the value of the respective metadata;
-        - `Description`: A small description of the respective metadata;
-        - `Ontology`: The name of the respective metadata in the used semantic schema;
-        - `openBIS` The name of respective metadata in the openBIS software;
-        - `openBIS datatype`: The datatype of the respective metadata inside openBIS;
-        - `Comments`: Some comments on the respective metadata;
-        - `is Parameter already created?`: To verify whether the respective metadata is already present in the `openBIS - parameters` datasheet;
-        - `is Entity already created?`: To verify whether the respective metadata is already present in the `Ontology - definition` datasheet;
-        - `does Entity already contains an IRI?`: To verify whether the entity used in the respective metadata already contains an IRI in the `Ontology - definition` datasheet;
-    - The `Metadata Updates` contains some tasks that should be performed to improve the `Metadata Schema`;
-    - The `Ontology - definition` contains the IRI links to the different ontologies. It comprises three columns:
-        - `Entity`: The name given to the respective metadata;
-        - `IRI`: The link to the ontology that defines the respective metadata;
-        - `Type`: The datatype of the respective metadata.
-    - The `openBIS - parameters` contains the definitions necessary to create the property types inside openBIS. It comprises seven columns:
-        - `Code`: Code of the property type inside openBIS;
-        - `Label`: Label of the property type inside openBIS;
-        - `Description`: Description of the property type inside openBIS;
-        - `DataType`: Datatype of the property type inside openBIS;
-        - `managedInternally`: Whether the property type is managed internally in openBIS;
-        - `Vocabulary`: Vocabulary of the property type inside openBIS, in the case, the property is a `CONTROLLEDVOCABULARY` datatype;
-        - `Metadata`: Type of widget used in the case of property types that are `MULTILINE_VARCHAR` or XML.
-    - The `openBIS - vocabulary` contains the vocabularies used in openBIS. It comprises two columns:
-        - `Vocabulary`: The code of the vocabulary inside openBIS;
-        - `Description`: Description of the respective vocabulary inside openBIS.
-    - The `openBIS - vocabulary terms` contains the terms used in vocabularies in openBIS. It comprises four columns:
-        - `Vocabulary`: The code of the vocabulary inside openBIS;
-        - `Term code`: The code of the term inside openBIS;
-        - `Term label`: The label of the term inside openBIS;
-        - `Term description`: The description of the term inside openBIS;
-    - The `Legend` contains a column with colors and a column with the legend of the colors. These colors are used in the file while developing it.
+* `schema\spmlink_model.yaml` defines the maps the objects and their properties needed to define experiments and simulations within the electronic lab notebook (ELN). It contains classes, types, slots, and enums:
+    - Classes define objects and complex properties. Each class contains the CURIEs (compact uniform resource identifiers), a small description, some annotations needed for openBIS, and some slots (properties). There are some classes such as PiezoConfigurationSettings that are not objects, but properties that contain other properties. Classes also contain the object Container which is needed for [LinkML](https://linkml.io/linkml/) validation purposes.
+    - Types define custom datatypes. Each type contains a description, a base datatype, a pattern, and an URI.
+    - Slots define object properties. Each slot contains a description, a range (data that are allowed in that slot), a CURIE, and some annotations needed for openBIS. It can also contains pattern, and whether it is an array (multivalued).
+    - Enums define list of values that can be used in some slots. Each enum contains a description, some annotations needed for openBIS, and allowed values (permissible_values).
+The schema can be converted to other file formats such as [JSON-Schema](https://json-schema.org/) and [RDF](https://www.w3.org/RDF/) using [LinkML](https://linkml.io/linkml/) tools.
 
-* `Metadata_Experiment_Objects.xlsx` defines an example of a publication. It contains all the objects and relations between those needed for defining a publication. It contains a datasheet named `Experiment` where all the relations between the different objects are defined and several other datasheets where the objects are described.
-* `create_excel_relations_file_for_selected_object.py` is a script to convert information obtained from the ELN of a specified object (object metadata and object relations) into an Excel file that may be afterwards used to be converted into the JSON-LD file format.
-* `convert_excel_to_jsonld.py` is used to convert information contained in the previous two Excel files into the JSON-LD file format.
-* `convert_excel_to_jsonld_flat.py` is used to convert information contained in the previous two Excel files into the JSON-LD file format (flat format).
-* `selected_object_schema.json` is an example of an JSON-LD file obtained from converting the information available in the Excel files. This JSON-LD can be explored in the [JSON-LD Playground](https://json-ld.org/playground/). One just needs to copy its content into the textbox displayed in the playground and click on the `Visualized` tab below it.
-* `create_openBIS_objects.py` is used for creating vocabularies, property types, and object types inside the ELN (openBIS in this use case).
-* `save_or_load_openbis_schema.py` is used to import/export ELN (openBIS) databases. This makes it easier to import data from one machine to another.
+* `data\collections_config.json` contains metadata needed to setup collections inside openBIS.
+* `data\small_example.yaml` contains a small example of data that can be validated or converted to other file format, e.g. [JSON-LD](https://json-ld.org/) using [LinkML](https://linkml.io/linkml/) tools.
+* `src\setup_openbis_using_linkml.py` is a Python script that uses `schema\spmlink_model.yaml` and `data\collections_config.json` to create all properties, vocabularies, object types, spaces, projects, and collections necessary to start storing data in openBIS.
+* `deprecated` contains deprecated files that were important to reach the current state.
 
 ## Achievement
 This repository contains all the files needed for creating the provenance of experiments and simulations in the context of microscopy.

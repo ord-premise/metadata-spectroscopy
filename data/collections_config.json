@@ -1,0 +1,171 @@
+{
+    "spaces": {
+        "CARBON_NANOMATERIALS": {
+            "description": "Carbon Nanomaterials"
+        },
+        "MATERIALS_TO_DEVICES": {
+            "description": "Materials to Devices"
+        },
+        "2D_QUANTUM_MATERIALS":{
+            "description": "2D Quantum Materials"
+        },
+        "QUANTUM_MAGNETISM": {
+            "description": "Quantum Magnetism"
+        },
+        "CHIRAL_SURFACES": {
+            "description": "Chiral Surfaces"
+        },
+        "ATOMISTIC_SIMULATIONS":{
+            "description": "Atomistic Simulations"
+        },
+        "EQUIPMENT": {
+            "description": "Equipment",
+            "projects": {
+                "INSTRUMENTS": {
+                    "description": "Instruments",
+                    "experiments": {
+                        "INSTRUMENT_COLLECTION": {
+                            "name": "Instruments"
+                        },
+                        "UHV_COMPONENT_COLLECTION": {
+                            "name": "UHV Components"
+                        }
+                    }
+                }
+            }
+        },
+        "FUNDING": {
+            "description": "Funding",
+            "projects": {
+                "GRANTS": {
+                    "description": "Grants",
+                    "experiments": {
+                        "EMPA_GRANT_COLLECTION": {
+                            "name": "Empa Grants"
+                        },
+                        "SNF_GRANT_COLLECTION": {
+                            "name": "SNF Grants"
+                        }
+                    }
+                }
+            }
+        },
+        "INSTITUTIONS":{
+            "description": "Institutions",
+            "projects": {
+                "INSTITUTIONS": {
+                    "description": "Institutions",
+                    "experiments": {
+                        "RESEARCH_LAB_COLLECTION": {
+                            "name": "Research Labs"
+                        },
+                        "UNIVERSITY_COLLECTION": {
+                            "name": "Universities"
+                        }
+                    }
+                },
+                "MANUFACTURERS": {
+                    "description": "Manufacturers",
+                    "experiments": {
+                        "MANUFACTURER_COLLECTION": {
+                            "name": "Manufacturers"
+                        }
+                    }
+                },
+                "ROOMS": {
+                    "description": "Rooms",
+                    "experiments": {
+                        "ROOM_COLLECTION": {
+                            "name": "Rooms"
+                        }
+                    }
+                },
+                "SUPPLIERS": {
+                    "description": "Suppliers",
+                    "experiments": {
+                        "SUPPLIER_COLLECTION": {
+                            "name": "Suppliers"
+                        }
+                    }
+                }
+            }
+        },
+        "LOG_ENTRIES": {
+            "description": "Log Entries",
+            "projects": {
+                "LOG_ENTRIES": {
+                    "description": "Log Entries",
+                    "experiments": {
+                        "MAINTENANCE_COLLECTION": {
+                            "name": "Maintenance"
+                        }
+                    }
+                }
+            }
+        },
+        "MATERIALS": {
+            "description": "Materials",
+            "projects": {
+                "2D_MATERIALS": {
+                    "description": "2D Materials",
+                    "experiments": {
+                        "2D_MATERIAL_COLLECTION": {
+                            "name": "2D Materials"
+                        }
+                    }
+                },
+                "ATOMISTIC_MODELS": {
+                    "description": "Atomistic Models",
+                    "experiments": {
+                        "ATOMISTIC_MODEL_COLLECTION": {
+                            "name": "Atomistic Models"
+                        }
+                    }
+                },
+                "CRYSTALS": {
+                    "description": "Crystals",
+                    "experiments": {
+                        "CRYSTAL_COLLECTION": {
+                            "name": "Crystals"
+                        }
+                    }
+                },
+                "MOLECULES": {
+                    "description": "Molecules",
+                    "experiments": {
+                        "MOLECULE_COLLECTION": {
+                            "name": "Molecules"
+                        }
+                    }
+                },
+                "SAMPLES": {
+                    "description": "Samples",
+                    "experiments": {
+                        "SAMPLE_COLLECTION": {
+                            "name": "Samples"
+                        }
+                    }
+                }
+            }
+        },
+        "PERSONS":{
+            "description": "Persons",
+            "projects": {
+                "PERSONS": {
+                    "description": "Persons",
+                    "experiments": {
+                        "AUTHOR_COLLECTION": {
+                            "name": "Authors"
+                        },
+                        "CHEMIST_COLLECTION": {
+                            "name": "Chemists"
+                        },
+                        "RESEARCHER_COLLECTION": {
+                            "name": "Researchers"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
