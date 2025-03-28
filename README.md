@@ -2,8 +2,8 @@
 Common metadata schema to store and access microscopy data from simulations and experiments in a single platform.
 
 ## Authors
-- Fabio Lopes
-- Carlo Pignedoli
+- Fabio Lopes (Empa)
+- Carlo Pignedoli (Empa)
 
 ## Goal
 * `schema\spmlink_model.yaml` defines the maps the objects and their properties needed to define experiments and simulations within the electronic lab notebook (ELN). It contains classes, types, slots, and enums:
